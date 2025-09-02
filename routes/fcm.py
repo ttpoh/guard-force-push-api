@@ -341,6 +341,8 @@ def fcm_send():
     title = data.get("title") or "알림"
     body = data.get("body") or ""
     custom_data = data.get("data") or {}
+    custom_data["gain"] = "1.0"  # 최대 볼륨 스케일
+    custom_data["alarm_stream_volume"] = "15"
 
     android = data.get("android") or {"priority": "HIGH", "directBootOk": True}
     ios = data.get("ios")  # 기본 None
